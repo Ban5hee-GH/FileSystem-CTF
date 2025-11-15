@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import random
 
 def build_challenge_list(state):
@@ -23,13 +22,13 @@ def print_challenges(state):
         print(line)
 
 def main():
-    # Track which challenges are completed
+
     challenge_state = {i: False for i in range(1, 7)}
 
     print("Type command 'challenge' to see your progress.\n")
     input("Press Enter to start...")
 
-    # Random MOTD bits
+
     processes = random.randint(100, 200)
     memoryusage = random.randint(100, 800)
     time1 = random.randint(1, 24)
@@ -37,9 +36,10 @@ def main():
     time3 = random.randint(10, 59)
     day = random.randint(1, 28)
     ip_parts = [str(random.randint(1, 254)) for _ in range(4)]
+    other_ip_address = ".".join(ip_parts)
     ip_address = ".".join(ip_parts)
 
-    print("\nWelcome to the Linux CLI Flag challenge made by (Ban5hee)\n")
+    print("\nWelcome to the Linux CLI Flag Challenge level 1 (INTRO) made by (Ban5hee)\n")
     input("Press Enter to continue...")
     print()
 
@@ -56,23 +56,25 @@ def main():
     print("0 updates can be applied immediately\n")
     print("Last Login: Thu Oct 3 12:00:00 UTC 2025\n")
 
-    # Simple fake filesystem
-    current_directory = "~"      # "~", "~/Flag", "~/Documents"
-    ssh_username = "JoeBiden"
-    ssh_password = "DumbassLeftHisPassword"
-    on_remote = False            # False = local machine, True = remote after ssh
+
+    current_directory = "~"
+    ssh_username = ['JoeBiden', 'DonaldTrump', 'JeremyClarkson', 'RichardHammond', 'JamesMay', 'GordonRamsay', 'ColdPlay', 'JeffreyDahmer', 'HarryPotter', 'KimJongUn']
+    ssh_password = ['DumbassLeftHisPassword', 'Password123!', 'ILeftMyKeysAgain', 'Admin1234', 'qwerty_is_bad', 'LetMeInPlease', 'Eggcellent123', 'Passw0rd!', 'ThisIsNotASecurePass', 'ForgottenPassword69',]
+    randomusername = random.choice(ssh_username)
+    randompassword = random.choice(ssh_password)
+    on_remote = False
 
     while True:
         if on_remote:
-            prompt = f"{ssh_username}@linux-remote:~$ "
+            prompt = f"ban5hee@linux-remote:~$ "
         else:
             prompt = f"user@linux:{current_directory}$ "
 
         command = input(prompt).strip()
 
-        # Commands that work everywhere
+
         if command == "exit":
-            # On remote: exit remote, on local: quit game
+
             if on_remote:
                 print("Logging out of remote machine.")
                 on_remote = False
@@ -87,7 +89,7 @@ def main():
             continue
 
         if not on_remote:
-            # ========== LOCAL MACHINE ==========
+
             if command == "ls":
                 if current_directory == "~":
                     print("Bin.txt  Flag  notes.txt  Documents")
@@ -110,7 +112,7 @@ def main():
 
                 if current_directory == "~":
                     if filename == "notes.txt":
-                        print(f"The ssh IP address for the other computer is {ip_address}")
+                        print(f"The ssh IP address for the other computer is {other_ip_address}")
                         if not challenge_state[4]:
                             challenge_state[4] = True
                             print("You completed challenge 4! Type 'challenge' to see your progress.")
@@ -131,13 +133,13 @@ def main():
                 elif current_directory == "~/Documents":
                     if filename == "ssh_Username.txt":
                         print("You found the ssh_Username.txt!")
-                        print("Username:", ssh_username)
+                        print("Username:", randomusername)
                         if not challenge_state[2]:
                             challenge_state[2] = True
                             print("You completed challenge 2! Type 'challenge' to see your progress.")
                     elif filename == "ssh_Password.txt":
                         print("You found the ssh_Password.txt!")
-                        print("Password:", ssh_password)
+                        print("Password:", randompassword)
                         if not challenge_state[3]:
                             challenge_state[3] = True
                             print("You completed challenge 3! Type 'challenge' to see your progress.")
@@ -150,7 +152,7 @@ def main():
                 user_input = input("Username: ").strip()
                 password_input = input("Password: ").strip()
 
-                if user_input == ssh_username and password_input == ssh_password:
+                if user_input == randomusername and password_input == randompassword:
                     print("Correct credentials. Successfully ssh'd into other computer.")
                     on_remote = True
                     if not challenge_state[5]:
@@ -159,12 +161,10 @@ def main():
                 else:
                     print("Authentication failed.")
             elif command == "":
-                # Just pressed Enter
                 continue
             else:
                 print(f"{command}: command not found")
         else:
-            # ========== REMOTE MACHINE ==========
             if command == "ls":
                 print("Use -la to find the hidden.txt")
             elif command == "ls -la":
