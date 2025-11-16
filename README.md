@@ -62,7 +62,7 @@ git clone https://github.com/Ban5hee-GH/TerminalWarrior.git
 ```
 #### Step 2: Enter the project
 ```bash
-cd FileSystem-CTF
+cd TerminalWarrior
 ```
 #### Step 3: Install dependencies
 ```bash
