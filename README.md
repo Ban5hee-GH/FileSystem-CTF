@@ -1,4 +1,4 @@
-S# TerminalWarrior
+# Termninal Warrior
 A containersized command-line cybersecurity challenge built in Python, simulating a Linux/Windows terminal where players solve hacking-style puzzles using real Linux/Windows commands.
 
 ##  Overview
@@ -17,18 +17,18 @@ A containersized command-line cybersecurity challenge built in Python, simulatin
 ---
 
 ### 🐧 Linux Terminal Levels:
-- |1| Intro Challenge | Explore directories and find hidden files | Basic Linux commands ('ls', 'cat', 'cd', 'pwd', 'whoami') |
-- |2| Permissions & Ownership | Learn how to view and modify file permissions | 'chmod', 'chown', 'sudo', file modes |
-- |3| Searching the system *(COMING SOON)* | Find hidden files and analyze logs | 'grep', 'find', 'less', 'head', 'tail' |
-- |4| Networking Challenge *(COMING SOON)* | Discover hosts and services | 'ping', 'netcat', 'curl', 'ssh' |
-- |5| Cryptography & Decoding *(COMING SOON)* | Decode hidden messages and hash files | base64, hashing, simple ciphers |
+- |*1*| Intro Challenge | Explore directories and find hidden files | Basic Linux commands ('ls', 'cat', 'cd', 'pwd', 'whoami') |
+- |*2*| Permissions & Ownership | Learn how to view and modify file permissions | 'chmod', 'chown', 'sudo', file modes |
+- |*3*| Searching the system *(COMING SOON)* | Find hidden files and analyze logs | 'grep', 'find', 'less', 'head', 'tail' |
+- |*4*| Networking Challenge *(COMING SOON)* | Discover hosts and services | 'ping', 'netcat', 'curl', 'ssh' |
+- |*5*| Cryptography & Decoding *(COMING SOON)* | Decode hidden messages and hash files | base64, hashing, simple ciphers |
 
 ### 🪟 Windows Terminal Levels:
-- |1| Intro challenge *(COMING SOON)* | Navigate folders and uncover hidden files | Basic Window commands ('dir', 'cd', 'type', 'cls', 'echo') |
-- |2| Permissions & Ownership *(COMING SOON)*| View and edit file rights | 'icals', 'attrib', 'takeown' |
-- |3| Searching the System *(COMING SOON)*| Hunt for hiden files and read logs | 'findstr', 'where', 'tree' |
-- |4| Networking Challenge *(COMING SOON)*| Scan the network and check services | 'ping', 'tracert' 'netstat', 'curl', 'ipconfig' |
-- |5| Ctryptography & Decoding *(COMING SOON)*| Decode messages and inspect hashes | base64, certutil, simple ciphers |
+- |*1*| Intro challenge | Navigate folders and uncover hidden files | Basic Window commands ('dir', 'cd', 'type', 'cls', 'echo') |
+- |*2*| Permissions & Ownership | View and edit file rights | 'icals', 'attrib', 'takeown' |
+- |*3*| Searching the System *(COMING SOON)*| Hunt for hiden files and read logs | 'findstr', 'where', 'tree' |
+- |*4*| Networking Challenge *(COMING SOON)*| Scan the network and check services | 'ping', 'tracert' 'netstat', 'curl', 'ipconfig' |
+- |*5*| Ctryptography & Decoding *(COMING SOON)*| Decode messages and inspect hashes | base64, certutil, simple ciphers |
 
 ## Installation & Setup
 
